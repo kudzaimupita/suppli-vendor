@@ -57,13 +57,13 @@ var routes = [
     component: CreateProduct,
     layout: "/admin",
   },
-    {
-    path: "/campaign",
-    name: "Email marketing",
-    icon: "ni ni-email-83 text-red",
-    component: Users,
-    layout: "/admin",
-  },
+//     {
+//     path: "/campaign",
+//     name: "Email marketing",
+//     icon: "ni ni-email-83 text-red",
+//     component: Users,
+//     layout: "/admin",
+//   },
   {
     path: "/plug-settings",
     name: "Settings",
