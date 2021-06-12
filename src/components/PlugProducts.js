@@ -149,7 +149,7 @@ class OrderTable extends React.Component {
     <Avatar
       shape="square"
       size={32}
-      src={`http://localhost:5000/img/products/${row.imageCover}`}
+      src={`https://suppli-images.s3.af-south-1.amazonaws.com/${row.imageCover && row.imageCover}`}
     />
   );
 
