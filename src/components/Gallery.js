@@ -7,13 +7,13 @@ class MyGallery extends React.Component {
   state = {
     images: [],
   };
-  //
+  //src={`https://suppli-images.s3.af-south-1.amazonaws.com/${row.imageCover && row.imageCover}`}
   render() {
     console.log(
       this.props.product.images &&
         this.props.product.images.map((image) => ({
-          original: `http://localhost:5000/img/products/${image}`,
-          thumbnail: `http://localhost:5000/img/products/${image}`,
+          original: `https://suppli-images.s3.af-south-1.amazonaws.com/${image}`,
+          thumbnail: `https://suppli-images.s3.af-south-1.amazonaws.com/${image}`,
         }))
     );
     return (
@@ -21,8 +21,8 @@ class MyGallery extends React.Component {
         items={
           this.props.product.images
             ? this.props.product.images.map((image) => ({
-                original: `http://localhost:5000/img/products/${image}`,
-                thumbnail: `http://localhost:5000/img/products/${image}`,
+                original: `https://suppli-images.s3.af-south-1.amazonaws.com/${image}`,
+                thumbnail: `https://suppli-images.s3.af-south-1.amazonaws.com/${image}`,
               }))
             : this.state.images
         }
