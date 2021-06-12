@@ -220,14 +220,14 @@ class PlugApplication extends React.Component {
   };
 
   onSubmit = async (e) => {
-    if (this.state.quickPoints.length < 5)
+//     if (this.state.quickPoints.length < 5)
+//       return this.props.setAlert(
+//         "Please add 5 key features of your product",
+//         "danger"
+//       );
+    if (this.state.fileList.length < 1)
       return this.props.setAlert(
-        "Please add 5 key features of your product",
-        "danger"
-      );
-    if (this.state.fileList.length < 4)
-      return this.props.setAlert(
-        "Please add atleast 4 images of the product",
+        "Please add atleast 1 image of the product",
         "danger"
       );
     const data = new FormData();
