@@ -228,11 +228,11 @@ class PlugApplication extends Component {
   };
 
   onSubmit = async (e) => {
-    if (this.state.quickPoints && this.state.quickPoints.length < 5)
-      return this.props.setAlert(
-        "Please add 5 key features of your product",
-        "danger"
-      );
+//     if (this.state.quickPoints && this.state.quickPoints.length < 5)
+//       return this.props.setAlert(
+//         "Please add 5 key features of your product",
+//         "danger"
+//       );
 
     const data = new FormData();
     if (this.state.imageCover)
