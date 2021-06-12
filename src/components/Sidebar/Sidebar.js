@@ -192,8 +192,14 @@ class Sidebar extends React.Component {
 								</Col>
 							</Row>
 						</div>
+						{/* Form */}
 
+						{/* Navigation */}
+						<Nav navbar>{this.createLinks(routes)}</Nav>
+						{/* Divider */}
 						<hr className="my-3" />
+						{/* Heading */}
+
 						<Nav className="mb-md-3" navbar>
 							<NavItem className="active-pro active">
 								<NavLink onClick={() => this.props.logout()}>
