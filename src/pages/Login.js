@@ -81,7 +81,7 @@ const Login = ({ setAlert, login, loading, isAuthenticated }) => {
 							<Col lg="5">
 								<Card
 									className="bg-secondary shadow border-0"
-									style={{ marginBottom: 250, marginTop: 250 }}
+									style={{ marginBottom: 300, marginTop: 250 }}
 								>
 									<CardBody className="px-lg-5 py-lg-5">
 										<div className="text-center text-muted mb-4">
