@@ -19,6 +19,7 @@
     "@testing-library/user-event": "^7.2.1",
     "amcharts3": "^3.21.13",
     "antd": "^3.11.6",
+    "antd-img-crop": "^3.14.2",
     "axios": "^0.20.0",
     "base64-img": "^1.0.4",
     "bootstrap": "4.3.1",
