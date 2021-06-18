@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import Spinner from "../src/components/Spinner";
+import{ Spinner} from "reactstrap";
 
 const PrivateRoute = ({
   component: Component,
@@ -13,7 +13,25 @@ const PrivateRoute = ({
     {...rest}
     render={(props) =>
       loading ? (
-        <Spinner />
+            <div
+                className="example"
+                style={{
+                    marginTop:'300px',
+                    borderRadius: ' 4px',
+                    textAlign: 'center',
+                    // margin: ' 20px 0',
+                    marginBottom: '20px',
+                    padding: '30px 50px',
+                    background: '#fff',
+                    zIndex: '99',
+                    width: '100%',
+                    height: '100%',
+                    // margin: 'auto',
+                    // display: 'block',
+                    position: 'fixed',
+                }}>
+                <Spinner size="large" />
+            </div>
       ) : isAuthenticated ? (
         <Component {...props} />
       ) : (
