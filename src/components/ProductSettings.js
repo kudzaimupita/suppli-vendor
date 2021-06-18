@@ -366,7 +366,7 @@ class PlugApplication extends Component {
                         height: '100%',
                         margin: 'auto',
                         display: 'block',
-                        position: 'fixed',
+                        position: 'relative',
                     }}>
                     <Spinner size="large" />
                 </div>}
