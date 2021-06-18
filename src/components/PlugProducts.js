@@ -7,7 +7,7 @@ import NavUserDropdown from "../components/NavUserDropdown";
 import { getProduct, deleteProduct, updateProduct } from "../actions/products";
 import { loadMyPlug } from "../actions/auth";
 import { getPlugStats, getDueAmount } from "../actions/plugs";
-import { Avatar, Checkbox, Card } from "antd";
+import { Avatar, Checkbox, Card,Tooltip} from "antd";
 import { ArrowUpOutlined, ArrowDownOutlined } from "@ant-design/icons";
 import ReactToPrint from "react-to-print";
 // react component for creating dynamic tables
@@ -93,6 +93,7 @@ class OrderTable extends React.Component {
   onSaleFormatter = (cell, row) => (
     <>
       {" "}
+          <Tooltip title="Edit Sale price">
       <Button
         color="danger"
         id="tooltip876279349"
@@ -105,7 +106,7 @@ class OrderTable extends React.Component {
         }
       >
         <small>was R</small> {row.was} <i class="fa fa-edit"></i>
-      </Button>
+              </Button> </Tooltip>
       <UncontrolledPopover placement="top" target="tooltip876279349">
         <PopoverBody>
           <div key={row._id} className="d-flex align-items-center">
@@ -150,7 +151,7 @@ class OrderTable extends React.Component {
   imageFormatter = (cell, row) => (
     <Avatar
       shape="square"
-      size={32}
+      size={40}
       src={`https://suppli-images.s3.af-south-1.amazonaws.com/${row.imageCover && row.imageCover}`}
     />
   );
@@ -158,6 +159,7 @@ class OrderTable extends React.Component {
   clearanceFormatter = (cell, row) => (
     <>
       {row.clearance ? (
+              <Tooltip title="Remove from clearance">
         <Button
           color="success"
           size="sm"
@@ -170,7 +172,11 @@ class OrderTable extends React.Component {
           <i class="fa fa-minus"></i>
           <small>remove</small>
         </Button>
-      ) : (<>
+    
+    
+  </Tooltip>
+      ) : (
+                  <Tooltip title="Add to clearance">
         <Button
           color="info"
                       data-placement="top"
@@ -184,13 +190,7 @@ class OrderTable extends React.Component {
           {" "}
           <i class="fa fa-plus"></i>
           <small>Add</small>{" "}
-                  </Button>     <UncontrolledTooltip
-                      delay={0}
-                      placement="top"
-                      target="tooltip611234743"
-                  >
-                      Add to clearance sale
-                  </UncontrolledTooltip></>
+                      </Button>     </Tooltip>
       )}
     </>
   );
@@ -200,6 +200,7 @@ class OrderTable extends React.Component {
       <div className="d-flex align-items-center">
         <Link to={`/admin/edit-product/${row._id}`}>
           {" "}
+                  <Tooltip title="Edit">
           <Button
             className=" btn-icon"
             color="info"
@@ -210,8 +211,10 @@ class OrderTable extends React.Component {
           >
             <i class="fa fa-edit"></i>
           </Button>
+                  </Tooltip>
         </Link>
         <Link to={`/admin/product/${row._id}`}>
+                  <Tooltip title="View">
           <Button
             className=" btn-icon"
             color="success"
@@ -220,8 +223,9 @@ class OrderTable extends React.Component {
             style={{ marginRight: "5px" }}
           >
             <i class="fa fa-eye"></i>
-          </Button>
+                      </Button></Tooltip>
         </Link>
+              <Tooltip title="Delete">
         <Button
           className=" btn-icon"
           color="danger"
@@ -233,7 +237,7 @@ class OrderTable extends React.Component {
           }
         >
           <i class="fa fa-trash"></i>
-        </Button>
+                  </Button></Tooltip>
       </div>
     </>
   );
@@ -340,7 +344,7 @@ class OrderTable extends React.Component {
                     height: '100%',
                     margin: 'auto',
                     display: 'block',
-                    position: 'relative',
+                    position: 'fixed',
                 }}>
                 <Spinner size="large" />
             </div>}
