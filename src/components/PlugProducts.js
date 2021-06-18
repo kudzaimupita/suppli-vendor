@@ -25,7 +25,9 @@ import {
   DropdownToggle,
   Media,
   Progress,
+  Spinner,
   Table,
+    // UncontrolledTooltip,
   Input,
   ButtonGroup,
   Button,
@@ -168,9 +170,11 @@ class OrderTable extends React.Component {
           <i class="fa fa-minus"></i>
           <small>remove</small>
         </Button>
-      ) : (
+      ) : (<>
         <Button
           color="info"
+                      data-placement="top"
+                      id="tooltip611234743"
           size="sm"
           onClick={() =>
             this.setState({ productId: row._id }) &
@@ -180,7 +184,13 @@ class OrderTable extends React.Component {
           {" "}
           <i class="fa fa-plus"></i>
           <small>Add</small>{" "}
-        </Button>
+                  </Button>     <UncontrolledTooltip
+                      delay={0}
+                      placement="top"
+                      target="tooltip611234743"
+                  >
+                      Add to clearance sale
+                  </UncontrolledTooltip></>
       )}
     </>
   );
@@ -218,8 +228,8 @@ class OrderTable extends React.Component {
           size="sm"
           type="button"
           onClick={() =>
-            this.toggleModal("notificationModal") &
-            this.setState({ productId: row._id })
+            // this.toggleModal("notificationModal") &
+            this.props.deleteProduct(row._id)
           }
         >
           <i class="fa fa-trash"></i>
@@ -315,6 +325,25 @@ class OrderTable extends React.Component {
     console.log(this.state);
     return (
       <>
+            {this.props.loading && <div
+                className="example"
+                style={{
+                    marginTop: '300px',
+                    borderRadius: ' 4px',
+                    textAlign: 'center',
+                    // margin: ' 20px 0',
+                    marginBottom: '20px',
+                    padding: '40px 90px',
+                    background: '#fff',
+                    zIndex: '99',
+                    width: '100%',
+                    height: '100%',
+                    margin: 'auto',
+                    display: 'block',
+                    position: 'fixed',
+                }}>
+                <Spinner size="large" />
+            </div>}
         {this.state.alert}
         <ToolkitProvider
           data={
@@ -469,6 +498,7 @@ OrderTable.defaultProps = {
 };
 
 const mapStateToProps = (state) => ({
+    loading:state.myPlug.loading,
   auth: state.auth,
   product: state.product.product,
   isAuthenticated: state.auth,
