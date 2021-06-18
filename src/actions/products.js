@@ -394,7 +394,7 @@ export const createProduct = (formData, history) => async (dispatch) => {
       type: CREATE_PRODUCT_SUCCESS,
       payload: res.data.data.doc,
     });
-    dispatch(setAlert("Product added to catalogue", "success"));
+    dispatch(setAlert("Added", "success"));
     dispatch(loadMyPlug());
     history.push("/admin/products");
     console.log(res.data.data.doc);
@@ -430,7 +430,7 @@ export const updateProduct = (id, formData, history) => async (dispatch) => {
       payload: res.data.data.doc,
     });
     dispatch(getProduct(id));
-    dispatch(setAlert("Product successfully updated", "success"));
+    dispatch(setAlert("Updated", "success"));
     dispatch(loadMyPlug());
     // history && history.push('/admin/products')
     console.log(res.data.data.doc);
@@ -461,7 +461,7 @@ export const deleteProduct = (id) => async (dispatch) => {
     dispatch({
       type: DELETE_PRODUCT_SUCCESS,
     });
-    dispatch(setAlert("Product succesfully deleted from catalogue", "success"));
+    dispatch(setAlert("Deleted from catalogue", "success"));
     dispatch(loadMyPlug());
     console.log(res.data);
   } catch (err) {
