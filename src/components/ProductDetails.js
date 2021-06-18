@@ -186,6 +186,25 @@ class PlugApplication extends Component {
             product
           </BreadcrumbItem>
         </Breadcrumb>
+            {this.props.loading && <div
+                className="example"
+                style={{
+                    marginTop: '300px',
+                    borderRadius: ' 4px',
+                    textAlign: 'center',
+                    // margin: ' 20px 0',
+                    marginBottom: '20px',
+                    padding: '40px 90px',
+                    background: '#fff',
+                    zIndex: '99',
+                    width: '100%',
+                    height: '100%',
+                    margin: 'auto',
+                    display: 'block',
+                    position: 'relative',
+                }}>
+                <Spinner size="large" />
+            </div>}
         <Card className="bg-white shadow" style={{ marginBottom: "30px" }}>
           <CardBody>
             <Form style={{ padding: "0" }}>
@@ -711,7 +730,7 @@ const mapStateToProps = (state) => ({
   auth: state.auth.isAuthenticated,
   product: state.product.product,
   isAuthenticated: state.auth,
-  loading: state.auth.loading,
+  loading: state.product.loading,
   createdPlugLoading: state.createdPlug.loading,
   catergories: state.catergories.catergories,
 });
