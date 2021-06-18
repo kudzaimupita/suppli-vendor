@@ -209,7 +209,7 @@ class PlugApplication extends Component {
           <CardBody>
             <Form style={{ padding: "0" }}>
               <Row style={{ padding: "0" }}>
-                <Col md="7" style={{ padding: "0" }}>
+                <Col md="5" style={{ padding: "0" }}>
                   <Images
                     product={
                       this.props.product.product && this.props.product.product
@@ -219,7 +219,7 @@ class PlugApplication extends Component {
                     {" "}
                   </Col>
                 </Col>
-                <Col lg="5">
+                <Col lg="6">
                   <Row style={{ marginLeft: "1px" }}>
                     <h2>
                       {this.props.product.product &&
