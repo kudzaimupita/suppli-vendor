@@ -351,6 +351,25 @@ class PlugApplication extends Component {
 		// console.log(this.props.product.product  && this.props.product.product.name)
 		return (
 			<>
+                {this.props.loading && <div
+                    className="example"
+                    style={{
+                        marginTop: '300px',
+                        borderRadius: ' 4px',
+                        textAlign: 'center',
+                        // margin: ' 20px 0',
+                        marginBottom: '20px',
+                        padding: '40px 90px',
+                        background: '#fff',
+                        zIndex: '99',
+                        width: '100%',
+                        height: '100%',
+                        margin: 'auto',
+                        display: 'block',
+                        position: 'fixed',
+                    }}>
+                    <Spinner size="large" />
+                </div>}
 				<Card className="bg-white shadow" style={{ marginBottom: 20 }}>
 					<CardHeader className="bg-secondary border-0">
 						<Row className="align-items-center">
@@ -718,7 +737,7 @@ const mapStateToProps = (state) => ({
 
 	product: state.product.product,
 
-	loading: state.auth.loading,
+	loading: state.product.loading,
 
 	catergories: state.catergories.catergories,
 });
