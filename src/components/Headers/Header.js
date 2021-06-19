@@ -41,8 +41,8 @@ class Header extends React.Component {
 	}
 	render() {
 		console.log(
-			this.props.productStats.productStats &&
-				this.props.productStats.productStats.toString()
+			this.props.productStats?.productStats &&
+				this.props.productStats?.productStats.toString()
 		);
 		return (
 			<>
@@ -75,8 +75,8 @@ class Header extends React.Component {
 														className="h2 font-weight-bold mb-0"
 														style={{ color: "white" }}
 													>
-														{this.props.myPlug.products &&
-															this.props.myPlug.products.length}
+														{this.props.myPlug?.products &&
+															this.props.myPlug?.products?.length}
 													</span>
 												</div>
 												<Col className="col-auto">
@@ -87,8 +87,8 @@ class Header extends React.Component {
 											</Row>
 											<p className="mt-3 mb-0 text-muted text-sm">
 												<span className="text-secondary mr-2">
-													{this.props.productStats.productStats
-														? this.props.productStats.productStats.toString()
+                                                    {this.props.productStats && this.props.productStats?.productStats 
+														? this.props.productStats?.productStats?.toString()
 														: 0}{" "}
 													products
 												</span>
@@ -122,8 +122,8 @@ class Header extends React.Component {
 														style={{ color: "white" }}
 													>
 														{" "}
-														{this.props.plugStats.plugSales
-															? this.props.plugStats.totalSales
+														{this.props.plugStats?.plugSales
+															? this.props.plugStats?.totalSales
 															: 0}
 													</span>
 												</div>
@@ -136,8 +136,8 @@ class Header extends React.Component {
 											</Row>
 											<p className="mt-3 mb-0 text-muted text-sm">
 												<span className="text-info mr-2">
-													{this.props.dailyStats.plugDailyStats
-														? this.props.dailyStats.plugDailyStats.totalSales
+													{this.props.dailyStats?.plugDailyStats
+														? this.props.dailyStats?.plugDailyStats?.totalSales
 														: 0}{" "}
 													sales
 												</span>{" "}
@@ -170,11 +170,11 @@ class Header extends React.Component {
 														style={{ color: "white" }}
 													>
 														{" "}
-														{this.props.plugStats.totalRevenue
+														{this.props.plugStats?.totalRevenue
 															? new Intl.NumberFormat("de-ZA", {
 																	style: "currency",
 																	currency: "ZAR",
-															  }).format(this.props.plugStats.totalRevenue)
+															  }).format(this.props.plugStats?.totalRevenue)
 															: 0}
 													</span>
 												</div>
@@ -186,12 +186,12 @@ class Header extends React.Component {
 											</Row>
 											<p className="mt-3 mb-0 text-muted text-sm">
 												<span className="text-success mr-2">
-													{this.props.dailyStats.plugDailyStats
+													{this.props.dailyStats?.plugDailyStats
 														? new Intl.NumberFormat("de-ZA", {
 																style: "currency",
 																currency: "ZAR",
 														  }).format(
-																this.props.dailyStats.plugDailyStats
+																this.props.dailyStats?.plugDailyStats
 																	.totalRevenue
 														  )
 														: 0}
@@ -230,7 +230,7 @@ class Header extends React.Component {
 															? new Intl.NumberFormat("de-ZA", {
 																	style: "currency",
 																	currency: "ZAR",
-															  }).format(this.props.amountDue.amountDue)
+															  }).format(this.props.amountDue?.amountDue)
 															: 0}
 													</span>
 												</div>
