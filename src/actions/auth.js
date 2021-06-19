@@ -220,11 +220,26 @@ export const loadMyPlug = () => async (dispatch) => {
     // if(!res.data.data.plug){
     //     return dispatch(setAlert('Sorry you dont have a shop', 'danger'))
     //   }
-    dispatch({
+      if (res?.data?.data?.plug){  dispatch({
       type: GET_MY_PLUG_SUCCESS,
       payload: res.data.data.plug,
     });
 
+    
+    
+    
+      } if (!res?.data?.data?.plug  ) {
+          dispatch(setAlert('Please create a store !', "success"))
+
+          dispatch({
+              type: LOGIN_FAIL,
+          });
+          dispatch({
+              type: AUTH_ERROR,
+          });
+
+      }
+  
     console.log(res.data.data.plug);
   } catch (err) {
     console.log(err);
