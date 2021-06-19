@@ -252,6 +252,31 @@ class PlugApplication extends Component {
 
 		const data = new FormData();
 		const img = this.state.filelist[0]?.originFileObj;
+        // if (!this.state.imageCover)
+        //     return this.props.setAlert(
+        //         "Each product should have an image",
+        //         "warning"
+        //     );
+        // if (!this.state.price)
+        //     return this.props.setAlert(
+        //         "Each product should have a price",
+        //         "warning"
+        //     );
+        // if (!this.state.brandName)
+        //     return this.props.setAlert(
+        //         "Each product should have a brand name",
+        //         "warning"
+        //     );
+        // if (!this.state.quantityInStock)
+        //     return this.props.setAlert(
+        //         "Each product should have a quantity",
+        //         "warning"
+        //     );
+        // if (this.state.subCatergory < 1)
+        //     return this.props.setAlert(
+        //         "Choose atleast one sub-category",
+        //         "warning"
+        //     );
 		if (img) data.append("imageCover", img);
 		// if (this.state.imageCover)
 		// 	this.state.fileList.unshift({ originFileObj: this.state.imageCover });
@@ -354,7 +379,7 @@ class PlugApplication extends Component {
                 {this.props.loading && <div
                     className="example"
                     style={{
-                        marginTop: '300px',
+                        marginTop: '3000px',
                         borderRadius: ' 4px',
                         textAlign: 'center',
                         // margin: ' 20px 0',
@@ -380,7 +405,7 @@ class PlugApplication extends Component {
 								<Link to="/admin/products">
 									{" "}
 									<Button color="primary" href="#pablo" size="sm">
-										See all products
+										View all products
 									</Button>
 								</Link>
 							</Col>
@@ -599,7 +624,7 @@ class PlugApplication extends Component {
 											htmlFor="input-country"
 											style={{ fontSize: "13px" }}
 										>
-											Cover image<span className="text-danger"> *</span>
+											Add New Image<span className="text-danger"> *</span>
 										</label>
 										<ImgCrop rotate>
 											<Upload
@@ -624,7 +649,7 @@ class PlugApplication extends Component {
 											htmlFor="input-country"
 											style={{ fontSize: "13px" }}
 										>
-											current Cover image
+											Current image
 										</label>
 										{this.state.filelist.length <= 1 && (
 											<img
