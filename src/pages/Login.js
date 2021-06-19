@@ -68,12 +68,15 @@ const Login = ({ setAlert, login, loading, isAuthenticated }) => {
 
 	return (
 		<>
-			<DemoNavbar authLink={authLink} />
+			{/* <DemoNavbar authLink={authLink} /> */}
 			<main>
 				<section
 					className="section section-shaped section-lg"
 					style={{
-						backgroundImage: `url(${require("../assets/img/brand/background1.png")})`,
+                        backgroundImage: `url(${require("../assets/img/brand/back1.png")})`, backgroundPosition: "",
+                        backgroundRepeat: " no-repeat",
+                        backgroundSize: "cover",
+                        height:'1100px'
 					}}
 				>
 					<Container className="pt-lg-4">
@@ -140,7 +143,7 @@ const Login = ({ setAlert, login, loading, isAuthenticated }) => {
 					</Container>
 				</section>
 			</main>
-			<SimpleFooter />
+			{/* <SimpleFooter /> */}
 		</>
 	);
 };
