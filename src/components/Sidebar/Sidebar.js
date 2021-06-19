@@ -140,7 +140,7 @@ class Sidebar extends React.Component {
                 className="navbar-brand-img"
                 src={logo.imgSrc}
               /> */}
-						{this.props.myPlug.name}
+						{this.props?.myPlug?.name}
 					</NavbarBrand>
 
 					{/* User */}
