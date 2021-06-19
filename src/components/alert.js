@@ -4,6 +4,7 @@ import { Button, notification, Divider, Space } from 'antd';
 
 
 const Alert = () => {
+   
     const alerts = useSelector((state) => state.alert);
     const openNotification = (placement, message, type) => {
         notification[type]({
@@ -20,7 +21,7 @@ const Alert = () => {
                     'topRight',
                     alert.msg,
 
-                    alert.alertType
+                    alert.alertType==='success'?'success':'warning'
                 )
             )}
         </>
