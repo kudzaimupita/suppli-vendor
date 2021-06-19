@@ -114,7 +114,6 @@ class OrderTable extends React.Component {
             <Input
               className="form-control-flush"
               type="number"
-              type="text"
               size="sm"
               style={{ width: "70px" }}
               defaultValue={this.state.price}
