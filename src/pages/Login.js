@@ -88,7 +88,7 @@ class Login extends Component {
                                 <label htmlFor="email" className="text-sm font-medium text-gray-700">
                                     Email<span style={{ color: 'red' }}>*</span>
                                 </label>
-                                <div className="my-3">
+                                <div className="mb-3">
                                     <Input
                                         size={'large'}
                                         type="text"
@@ -104,7 +104,7 @@ class Login extends Component {
                                 <label htmlFor="password" className="text-sm font-medium text-gray-700">
                                     Password<span style={{ color: 'red' }}>*</span>
                                 </label>
-                                <div className="my-3">
+                                <div className="mb-3">
 
                                     <Input.Password
                                         className=""
