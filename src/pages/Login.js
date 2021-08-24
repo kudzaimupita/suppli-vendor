@@ -83,7 +83,7 @@ class Login extends Component {
                         className="ps-form--account max-w-md sm:mx-auto sm:w-full sm:max-w-md mb-4 "
                         onSubmit={this.handleLoginSubmit}>
 
-                        <div className="shadow bg-white overflow-hidden border-b border-gray-200 sm:rounded-lg " id="sign-in">
+                        <div className="shadow-2xl bg-white overflow-hidden border-b border-gray-200 sm:rounded-lg " id="sign-in">
                             <div className="ps-form__content m-4">
                                 <label htmlFor="email" className="text-sm font-medium text-gray-700">
                                     Email<span style={{ color: 'red' }}>*</span>
@@ -136,7 +136,6 @@ class Login extends Component {
                                     <span style={{ marginRight: 10 }}> {this.props.loading ? <Spinner
                                         size="sm"
                                         style={{ marginRight: 6 }}
-                                        // type="grow"
                                         color="white"
                                     />
                                         : null}</span>
