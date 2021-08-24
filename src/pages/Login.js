@@ -91,7 +91,7 @@ class Login extends Component {
                                 <div className="mb-3">
                                     <Input
                                         size={'large'}
-                                        type="text"
+                                        type="email"
                                         placeholder="Email address"
                                         required
                                         name="email"
