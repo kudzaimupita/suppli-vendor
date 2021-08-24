@@ -9,6 +9,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@glidejs/glide": "^3.4.1",
+    "@heroicons/react": "^1.0.4",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
@@ -42,6 +43,7 @@
     "nprogress": "^0.2.0",
     "perfect-scrollbar": "^1.5.0",
     "react": "16.12.0",
+    "react-activity": "^2.1.1",
     "react-bootstrap-sweetalert": "^5.2.0",
     "react-bootstrap-table-next": "^4.0.3",
     "react-bootstrap-table2-paginator": "^2.1.2",
@@ -97,5 +99,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.36",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.7"
   }
 }

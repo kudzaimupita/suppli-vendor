@@ -9,6 +9,7 @@ import "./assets/scss/argon-dashboard-react.scss";
 import "react-notification-alert/dist/animate.css";
 import "./assets/scss/image-gallery.scss";
 import "antd/dist/antd.css";
+import './tailwind.css'
 
 // import "./bootstrap/dist/css/bootstrap.css";
 // import "./assets/scss/now-ui-dashboard.scss?v1.4.0";
@@ -18,9 +19,9 @@ import "antd/dist/antd.css";
 // import "./assets/css/nucleo-icons.css";
 
 ReactDOM.render(
-  <App />,
+    <App />,
 
-  document.getElementById("root")
+    document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
