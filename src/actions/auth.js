@@ -216,7 +216,7 @@ export const loadMyPlug = () => async (dispatch) => {
     });
 
     try {
-        const res = await api.get("/vendors/myplug");
+        const res = await api.get("/plug2/myplug");
         // if(!res.data.data.plug){
         //     return dispatch(setAlert('Sorry you dont have a shop', 'danger'))
         //   }
